@@ -397,7 +397,7 @@ const theme = {
 			</Title>
 			<List>
 				<li>Props are camelCased CSS properties</li>
-				<li>Each props is responsive</li>
+				<li>All props are responsive</li>
 				<li>Easy access to design tokens</li>
 				<li>Works with most CSS in JS libraries</li>
 			</List>
