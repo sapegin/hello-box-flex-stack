@@ -6,7 +6,7 @@ import { getUrl } from '../../urls';
 
 const Routes = () => (
 	<Router basepath={getUrl()}>
-		<Homepage path="/" />
+		<Homepage path="/" default />
 		<Checkout path="/checkout/:dogId" />
 	</Router>
 );
