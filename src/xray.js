@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 import { useHotkeys } from 'react-hotkeys-hook';
 
 const BoxStyle = createGlobalStyle`
-	[class^="Box-sc-"]:not([class*="Flex-sc-"]) {
+	[class^="Box-"]:not([class*="Flex-"]) {
 		outline: 2px solid rgba(42, 128, 0, 0.5) !important;
 		outline-offset: -2px;
 		background-color: rgba(42, 128, 0, 0.1);
@@ -11,7 +11,7 @@ const BoxStyle = createGlobalStyle`
 	`;
 
 const FlexStyle = createGlobalStyle`
-	[class*="Flex-sc-"] {
+	[class*="Flex-"] {
 		outline: 2px solid rgba(53, 107, 255, 0.5) !important;
 		outline-offset: -2px;
 
@@ -24,7 +24,7 @@ const FlexStyle = createGlobalStyle`
 	`;
 
 const StackStyle = createGlobalStyle`
-	[class^="Stack-sc-"] {
+	[class^="Stack-"] {
 		outline: 2px solid rgba(199, 27, 0, 0.5) !important;
 		outline-offset: -2px;
 
