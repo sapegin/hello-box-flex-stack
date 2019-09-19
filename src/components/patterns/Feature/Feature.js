@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Stack from '../../core/Stack';
-import Box from '../../core/Box';
+import Flex from '../../core/Flex';
 import Heading from '../../core/Heading';
 import Text from '../../core/Text';
 
@@ -11,11 +11,10 @@ const Feature = ({ as, children }) => (
 	</Stack>
 );
 
-// width={80}
 Feature.Icon = ({ children }) => (
-	<Box mx="auto" color="secondary">
+	<Flex justifyContent="center" color="secondary">
 		{children}
-	</Box>
+	</Flex>
 );
 
 Feature.Heading = ({ children }) => (

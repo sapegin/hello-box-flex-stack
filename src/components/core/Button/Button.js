@@ -10,10 +10,11 @@ const getBgColor = variant => ({ primary: 'primary' }[variant]);
 const Button = styled.button`
 	display: ${props => props.fullWidth && 'block'};
 	width: ${props => props.fullWidth && '100%'};
-	height: 2.5rem;
+	height: 2.5em;
 	padding: ${props => props.theme.space[3]} ${props => props.theme.space[4]};
 	text-align: center;
-	border: 1px solid ${props => props.theme.colors.primary};
+	border: ${props => props.theme.borders.thin}
+		${props => props.theme.colors.primary};
 	border-radius: ${props => props.theme.radii.base};
 	font-family: ${props => props.theme.fonts.base};
 	font-size: ${props => props.theme.fontSizes.base};
