@@ -605,6 +605,23 @@ export default Stack;
 
 		<Frame src={exampleUrl} animate />
 
+		<>
+			<Title>Demo</Title>
+			<p>
+				<Link href="https://heybox.sapegin.me/demo.html">
+					heybox.sapegin.me/demo.html
+				</Link>
+			</p>
+			<p>
+				<Link href="https://github.com/sapegin/hello-box-flex-stack">
+					github.com/sapegin/hello-box-flex-stack
+				</Link>
+			</p>
+			<p>
+				Press <code>b</code>, <code>f</code> or <code>s</code> for x-ray.
+			</p>
+		</>
+
 		<Split>
 			<Code lang="jsx" m="m">{`
 <Flex
