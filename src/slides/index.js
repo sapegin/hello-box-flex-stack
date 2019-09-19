@@ -712,10 +712,7 @@ export default Stack;
 		<>
 			<Title>Thank you and use components!</Title>
 			<p>
-				Slides:{' '}
-				<Link href="https://sapegin.github.io/slides/inconsistent-styles-full/">
-					bit.ly/usecomponents
-				</Link>
+				Slides: <Link href="https://heybox.sapegin.me/">heybox.sapegin.me</Link>
 				<br /> Me: <Link href="https://sapegin.me/">sapegin.me</Link>
 				<br /> Twitter:{' '}
 				<Link href="https://twitter.com/iamsapegin">@iamsapegin</Link>
