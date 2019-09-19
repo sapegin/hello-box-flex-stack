@@ -689,7 +689,7 @@ export default Stack;
         <DogInfo dog={dog} />
       </Card.Body>
       <Card.Footer>
-        <Button as={Link} fullWidth to={getUrl(\`/checkout/\${dog.id}\`)}>
+        <Button as={Link} fullWidth to={\`/checkout/\${dog.id}\`}>
           Rent {dog.name}
         </Button>
       </Card.Footer>
