@@ -11,28 +11,30 @@ const Keyboard = () => {
 };
 
 export default function Deck({ children }) {
-	const slides = React.Children.toArray(children);
 	const [numberOfSteps, setNumberOfSteps] = useState(0);
 	const [currentStep, setCurrentStep] = useState(null);
-	const context = useMemo(
-		() => ({
-			numberOfSlides: slides.length,
-			numberOfSteps,
-			currentStep,
-			setNumberOfSteps,
-			setCurrentStep,
-		}),
-		[slides, numberOfSteps, currentStep]
-	);
-	return (
-		<Context.Provider value={context}>
-			<Keyboard />
+	const context = {
+		numberOfSlides: React.Children.count(children),
+		numberOfSteps,
+		currentStep,
+		setNumberOfSteps,
+		setCurrentStep,
+	};
+	const slides = useMemo(
+		() => (
 			<Router>
-				{slides.map((slide, index) => {
+				{React.Children.toArray(children).map((slide, index) => {
 					const Slide = () => <SlideBase>{slide}</SlideBase>;
 					return <Slide key={index} path={`/${index}`} default={index === 0} />;
 				})}
 			</Router>
+		),
+		[children]
+	);
+	return (
+		<Context.Provider value={context}>
+			<Keyboard />
+			{slides}
 		</Context.Provider>
 	);
 }

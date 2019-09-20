@@ -62,9 +62,7 @@ export default function useKeyboard() {
 				case KEYS.left:
 				case KEYS.up:
 				case KEYS.pageUp:
-					previousSlide().then(() => {
-						console.log('navigated', numberOfSteps);
-					});
+					previousSlide();
 					// setCurrentStep(numberOfSteps); // TODO
 					break;
 				case KEYS.enter:

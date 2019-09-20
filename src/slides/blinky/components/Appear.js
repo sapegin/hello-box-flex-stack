@@ -11,8 +11,8 @@ export const Appear = ({ children }) => {
 				React.cloneElement(child, {
 					style: {
 						...child.props.style,
-						// TODO: Animation doesn't work
-						transition: 'opacity 5s ease-out',
+						willChange: 'opacity',
+						transition: 'opacity 3s ease-out',
 						opacity: index < currentStep ? 1 : 0,
 					},
 				})
