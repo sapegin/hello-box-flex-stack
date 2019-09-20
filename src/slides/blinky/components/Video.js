@@ -3,11 +3,12 @@ import Box from './Box';
 
 export const Video = styled(Box)({
 	display: 'block',
-	objectFit: 'cover'
+	objectFit: 'cover',
+	filter: p => p.filter,
 });
 
 Video.defaultProps = {
-	as: 'video'
+	as: 'video',
 };
 
 export default Video;

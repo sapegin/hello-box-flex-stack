@@ -72,6 +72,7 @@ const Slides = () => (
 				width="100%"
 				height="100vh"
 				margin="auto"
+				filter="saturate(0.8) hue-rotate(2deg) contrast(0.95) brightness(1.05) sepia(0.1)"
 			/>
 		</Split>
 
