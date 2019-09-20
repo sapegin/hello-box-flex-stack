@@ -35,7 +35,7 @@ export default {
 				paddingRight: `${space.l} !important`,
 			},
 			'& > ul, & > li': {
-				paddingLeft: '6vmax !important',
+				paddingLeft: '8vmin !important',
 			},
 			'& > iframe': {
 				paddingLeft: '0 !important',

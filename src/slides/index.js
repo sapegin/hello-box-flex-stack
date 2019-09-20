@@ -124,7 +124,7 @@ const Slides = () => (
 							</Box>
 						</Box>
 						<Box ml="auto">
-							<Button style={{ fontSize: '1.9vmax' }}>
+							<Button style={{ fontSize: '3.25vmin' }}>
 								<Box>Delete</Box>
 							</Button>
 						</Box>
@@ -712,7 +712,7 @@ export default Stack;
         </Button>
       </Card.Footer>
     </Card>
-))}
+  ))}
 </Stack>
 `}</Code>
 

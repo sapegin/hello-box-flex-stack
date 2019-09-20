@@ -11,7 +11,7 @@ export default ({ children }) => (
 			space,
 			borders: {
 				...theme.borders,
-				thin: '0.3vmax solid',
+				thin: '0.5vmin solid',
 			},
 		}}
 	>

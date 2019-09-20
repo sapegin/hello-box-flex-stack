@@ -14,22 +14,22 @@ export const font = '"PT Sans", sans-serif';
 export const monospace = '"Fira Mono", monospace';
 
 export const fontSizes = {
-	base: '2.9vmax',
-	s: '1.9vmax',
-	m: '2.9vmax',
-	l: '4.3vmax',
-	xl: '6.5vmax',
-	xxl: '10vmax',
+	base: '5.5vmin',
+	s: '3.25vmin',
+	m: '5.5vmin',
+	l: '8vmin',
+	xl: '14vmin',
+	xxl: '20vmin',
 };
 
 export const space = {
-	xxs: '0.125vmax',
-	xs: '0.25vmax',
-	s: '0.5vmax',
-	m: '1vmax',
-	l: '2vmax',
-	xl: '4vmax',
-	xxl: '8vmax',
-	xxxl: '16vmax',
-	xxxxl: '32vmax',
+	xxs: '0.25vmin',
+	xs: '0.5vmin',
+	s: '1vmin',
+	m: '2vmin',
+	l: '4vmin',
+	xl: '8vmin',
+	xxl: '16vmin',
+	xxxl: '32vmin',
+	xxxxl: '64vmin',
 };
