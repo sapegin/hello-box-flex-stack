@@ -27,6 +27,7 @@
     "react-dom": "^16.9.0",
     "react-hotkeys-hook": "^1.5.3",
     "react-scripts": "3.1.1",
+    "react-transition-group": "^4.3.0",
     "stack-styled": "^3.0.0",
     "styled-components": "^4.3.2",
     "styled-system": "^5.1.2"

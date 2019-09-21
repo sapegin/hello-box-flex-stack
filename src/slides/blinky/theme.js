@@ -25,9 +25,6 @@ export default {
 		slide: {
 			fontFamily: font,
 			fontSize: fontSizes.m,
-			width: '100vw',
-			height: '100vh',
-			overflow: 'hidden',
 			justifyContent: 'flex-start',
 			alignItems: 'flex-start',
 			'& > *:not(div)': {

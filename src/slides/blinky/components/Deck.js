@@ -4,6 +4,7 @@ import { Router } from '@reach/router';
 import SlideBase from './Slide';
 import Context from '../context';
 import useKeyboard from '../hooks/use-keyboard';
+import FadeRouter from './FadeRouter';
 
 const Keyboard = () => {
 	useKeyboard();
@@ -22,12 +23,12 @@ export default function Deck({ children }) {
 	};
 	const slides = useMemo(
 		() => (
-			<Router>
+			<FadeRouter>
 				{React.Children.toArray(children).map((slide, index) => {
 					const Slide = () => <SlideBase>{slide}</SlideBase>;
 					return <Slide key={index} path={`/${index}`} default={index === 0} />;
 				})}
-			</Router>
+			</FadeRouter>
 		),
 		[children]
 	);
