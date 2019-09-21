@@ -21,6 +21,7 @@ import {
 	Code,
 	Frame,
 	Rotate,
+	Appear,
 } from './blinky';
 import Text from '../components/core/Text';
 import Button from '../components/core/Button';
@@ -48,7 +49,7 @@ const Slides = () => (
 	<Deck>
 		<CoverWayfair>
 			<Heading as="h1">
-				Say hello to Box, Flex and Stack: layouts in the component era
+				Say hello to Box, Flex and Stack: layouts in the component age
 			</Heading>
 		</CoverWayfair>
 
@@ -63,6 +64,9 @@ const Slides = () => (
 					Wayfair
 					<br />
 					Berlin, Germany
+					<Appear>
+						<div aria-label="Two dogs">🐶 🐶</div>
+					</Appear>
 				</div>
 			</Center>
 			<Video
@@ -116,7 +120,7 @@ const Slides = () => (
 				<Box p="m" height="100vh" bg="grey.3">
 					<Flex alignItems="baseline">
 						<Box mr="m">
-							<Box as="big" fontSize="m">
+							<Box as="big" fontSize="4vmin">
 								Penguin Flipper Xs Max
 							</Box>{' '}
 							<Box as="small" mr="s" color="secondary">
@@ -124,7 +128,7 @@ const Slides = () => (
 							</Box>
 						</Box>
 						<Box ml="auto">
-							<Button style={{ fontSize: '3.25vmin' }}>
+							<Button style={{ fontSize: '3vmin' }}>
 								<Box>Delete</Box>
 							</Button>
 						</Box>
@@ -249,7 +253,7 @@ const Slides = () => (
 		</>
 
 		<Center>
-			<Heading as="p" fontSize="l">
+			<Heading as="p" fontSize="m">
 				<Code lang="jsx" inline>
 					{'<Button onClick={handleClick}>'}
 				</Code>
@@ -257,7 +261,7 @@ const Slides = () => (
 		</Center>
 
 		<Center>
-			<Heading as="p" fontSize="l">
+			<Heading as="p" fontSize="m">
 				<Code lang="jsx" inline>
 					{'<Text fontSize="l" color="secondary">'}
 				</Code>
@@ -363,11 +367,6 @@ const Slides = () => (
 
 		<SplitWithHeading>
 			<Title>Design tokens</Title>
-			<Code lang="html" m="m">{`
-<Box color="bg" bg="text" p="m">
-  I’m a card.
-</Box>
-`}</Code>
 			<Code lang="jsx" m="m">{`
 const theme = {
   colors: {
@@ -385,6 +384,11 @@ const theme = {
     xxxl: '16rem',
   }
 }
+`}</Code>
+			<Code lang="html" m="m">{`
+<Box color="bg" bg="text" p="m">
+  I’m a card.
+</Box>
 `}</Code>
 		</SplitWithHeading>
 
@@ -488,7 +492,7 @@ export default Flex;
   ]}
   flexWrap="wrap"
 >
-  <Box width={[1, 'auto']} mb={2}>
+  <Box width={[1, 'auto']} mb="m"
     <Text as="h1">
       <Link href="/">Rent-o-dog</Link>
     </Text>
@@ -543,7 +547,7 @@ export default Stack;
 
 		<Split>
 			<Code lang="jsx" m="m">{`
-<Stack gridGap={2}>
+<Stack gridGap="m"
   <Flex
     justifyContent="center"
     color="secondary"

@@ -14,9 +14,9 @@ export const font = '"PT Sans", sans-serif';
 export const monospace = '"Fira Mono", monospace';
 
 export const fontSizes = {
-	base: '5.5vmin',
-	s: '3.25vmin',
-	m: '5.5vmin',
+	base: '5vmin',
+	s: '3vmin',
+	m: '5vmin',
 	l: '8vmin',
 	xl: '14vmin',
 	xxl: '20vmin',

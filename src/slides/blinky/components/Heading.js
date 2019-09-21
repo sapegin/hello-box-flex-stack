@@ -25,7 +25,7 @@ const fontSize = ({
 };
 
 const HeadingStyle = styled.h2`
-	max-width: 90vw;
+	max-width: 95vw;
 	font-size: ${fontSize};
 	font-weight: normal;
 	line-height: 1.1;
