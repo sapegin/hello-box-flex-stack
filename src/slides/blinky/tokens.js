@@ -17,7 +17,7 @@ export const fontSizes = {
 	base: '5vmin',
 	s: '3vmin',
 	m: '5vmin',
-	l: '8vmin',
+	l: '7vmin',
 	xl: '14vmin',
 	xxl: '20vmin',
 };
