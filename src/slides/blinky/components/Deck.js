@@ -1,9 +1,9 @@
 // Inspired by mdx-deck
 import React, { useState, useMemo } from 'react';
-import { Router } from '@reach/router';
 import SlideBase from './Slide';
 import Context from '../context';
 import useKeyboard from '../hooks/use-keyboard';
+import Navigation from './Navigation';
 import FadeRouter from './FadeRouter';
 
 const Keyboard = () => {
@@ -35,6 +35,7 @@ export default function Deck({ children }) {
 	return (
 		<Context.Provider value={context}>
 			<Keyboard />
+			<Navigation />
 			{slides}
 		</Context.Provider>
 	);

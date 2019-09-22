@@ -7,6 +7,8 @@ import {
 	darkColor,
 	primaryColor,
 	secondaryColor,
+	uiColor,
+	uiHoverColor,
 } from './tokens';
 
 export default {
@@ -20,6 +22,8 @@ export default {
 		secondary: secondaryColor,
 		pre: darkColor,
 		code: darkColor,
+		ui: uiColor,
+		uiHover: uiHoverColor,
 	},
 	styles: {
 		slide: {

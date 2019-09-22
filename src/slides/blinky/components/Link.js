@@ -8,10 +8,10 @@ const Link = styled.a`
 		outline-offset: 0.1em;
 	}
 
-	:fullscreen & {
+	html:fullscreen & {
 		text-decoration: none;
 	}
-	:-webkit-full-screen & {
+	html:-webkit-full-screen & {
 		text-decoration: none;
 	}
 `;

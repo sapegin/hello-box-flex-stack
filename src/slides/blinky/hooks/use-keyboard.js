@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import screenfull from 'screenfull';
 import { useDeck } from '../context';
-import { next, previous } from '../navigate';
+import { next, previous } from '../navigation';
 
 const KEYS = {
 	right: 39,
