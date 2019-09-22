@@ -7,7 +7,7 @@ import { previous, next } from '../navigation';
 const Nav = styled(Box)`
 	transition: opacity ease-out 0.5s;
 	> * + * {
-		margin-left: ${p => p.theme.space.m};
+		margin-left: calc(1rem + 1vmin);
 	}
 	html:fullscreen & {
 		opacity: 0;
@@ -21,14 +21,14 @@ const Button = styled.button`
 	display: inline-block;
 	padding: 0;
 	background-color: transparent;
-	border-width: 4vmin;
+	border-width: calc(1rem + 3vmin);
 	border-color: transparent;
 	cursor: pointer;
 	transition: border ease-out 0.15s;
 `;
 const PreviousButton = styled(Button)`
 	border-left-width: 0;
-	border-right-width: 5.7vmin;
+	border-right-width: calc(1rem + 4vmin);
 	border-right-color: ${p => p.theme.colors.ui};
 	&:hover,
 	&:focus,
@@ -39,7 +39,7 @@ const PreviousButton = styled(Button)`
 `;
 const NextButton = styled(Button)`
 	border-right-width: 0;
-	border-left-width: 5.7vmin;
+	border-left-width: calc(1rem + 4vmin);
 	border-left-color: ${p => p.theme.colors.ui};
 	&:hover,
 	&:focus,
