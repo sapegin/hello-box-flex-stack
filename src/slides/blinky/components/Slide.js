@@ -10,6 +10,7 @@ const Slide = styled.div(p => ({
 	left: 0,
 	bottom: 0,
 	right: 0,
+	willChange: 'opacity',
 	'.fade-enter &': {
 		opacity: 0,
 		zIndex: 1,

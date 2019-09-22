@@ -3,13 +3,13 @@ import styled, { keyframes } from 'styled-components';
 import Box from './Box';
 
 const rotation = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+	will-change: transform;
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 `;
 
 export const Rotate = styled(Box)`
