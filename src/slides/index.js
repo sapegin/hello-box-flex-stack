@@ -732,6 +732,10 @@ export default Stack;
 				<br /> Twitter:{' '}
 				<Link href="https://twitter.com/iamsapegin">@iamsapegin</Link>
 			</p>
+			<p>
+				We’re hiring in Berlin:{' '}
+				<Link href="http://bit.ly/wfberlin">bit.ly/wfberlin</Link>
+			</p>
 			<Image src={dogsJpg} height="40vh" />
 		</>
 	</Deck>
