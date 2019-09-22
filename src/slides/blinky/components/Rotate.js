@@ -3,7 +3,6 @@ import styled, { keyframes } from 'styled-components';
 import Box from './Box';
 
 const rotation = keyframes`
-	will-change: transform;
 	from {
 		transform: rotate(0deg);
 	}
@@ -13,6 +12,7 @@ const rotation = keyframes`
 `;
 
 export const Rotate = styled(Box)`
+	will-change: transform;
 	animation: ${rotation} ${p => p.duration} linear infinite;
 `;
 

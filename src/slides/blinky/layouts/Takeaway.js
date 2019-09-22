@@ -15,6 +15,7 @@ const animation = keyframes`
 `;
 
 const TakeawayStyle = styled(Center)`
+	will-change: background-position;
 	background: linear-gradient(270deg, #f90, #00d7ff);
 	background-size: 400% 400%;
 	animation: ${animation} 20s ease infinite;
