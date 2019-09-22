@@ -1,16 +1,7 @@
 import { useEffect } from 'react';
-import { globalHistory } from '@reach/router';
 import screenfull from 'screenfull';
-import { navigate } from '@reach/router';
 import { useDeck } from '../context';
-
-const getCurrentSlide = () =>
-	parseInt(globalHistory.location.pathname.replace(/^\//, '')) || 0;
-
-const nextSlide = numberOfSlides =>
-	navigate(`/${Math.min(getCurrentSlide() + 1, numberOfSlides - 1)}`);
-
-const previousSlide = () => navigate(`/${Math.max(getCurrentSlide() - 1, 0)}`);
+import { next, previous } from '../navigate';
 
 const KEYS = {
 	right: 39,
@@ -29,13 +20,6 @@ const INPUT_ELEMENTS = ['input', 'select', 'textarea', 'a', 'button'];
 export default function useKeyboard() {
 	const context = useDeck();
 	useEffect(() => {
-		const {
-			numberOfSlides,
-			numberOfSteps,
-			currentStep,
-			setCurrentStep,
-		} = context;
-
 		const handleKeyDown = ({ keyCode, metaKey, ctrlKey, altKey }) => {
 			if (metaKey || ctrlKey) {
 				return;
@@ -52,18 +36,12 @@ export default function useKeyboard() {
 				case KEYS.down:
 				case KEYS.pageDown:
 				case KEYS.space:
-					if (currentStep < numberOfSteps) {
-						setCurrentStep(currentStep + 1);
-					} else {
-						nextSlide(numberOfSlides);
-						setCurrentStep(0);
-					}
+					next(context);
 					break;
 				case KEYS.left:
 				case KEYS.up:
 				case KEYS.pageUp:
-					previousSlide();
-					// setCurrentStep(numberOfSteps); // TODO
+					previous(context);
 					break;
 				case KEYS.enter:
 					if (altKey) {
