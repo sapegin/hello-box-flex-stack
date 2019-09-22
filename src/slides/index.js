@@ -359,7 +359,7 @@ const Slides = () => (
 		</Split>
 
 		<Takeaway>
-			<Heading as="p">Learn once, use everywhere</Heading>
+			<Heading as="p">Learn once, use&nbsp;everywhere</Heading>
 		</Takeaway>
 
 		<SplitWithHeading>
