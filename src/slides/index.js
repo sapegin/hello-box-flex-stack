@@ -538,21 +538,23 @@ export default Stack;
 `}</Code>
 		</>
 
+		<>
+			<Title>stack-styled</Title>
+			<Link href="https://github.com/sapegin/stack-styled">
+				github.com/sapegin/stack-styled
+			</Link>
+		</>
+
 		<Split>
 			<Code lang="jsx" m="m">{`
-<Stack gridGap="m">
-  <Flex
-    justifyContent="center"
-    color="secondary"
-  >
-    <Icon name="duck" width={80} />
-  </Flex>
-  <Heading
-    as="h3" size="m" textAlign="center"
-  >
+<Stack gridGap="m" textAlign="center">
+  <Box color="secondary">
+    <Icon name="duck" />
+  </Box>
+  <Heading size="m">
     Rubberducking
   </Heading>
-  <Text textAlign="center">
+  <Text>
     Expain your problem to a dog…
   </Text>
 </Stack>
@@ -560,9 +562,9 @@ export default Stack;
 			<Demo>
 				<Box p="m" height="100vh" bg="grey.3">
 					<Stack gridGap="m">
-						<Flex justifyContent="center" color="secondary">
+						<Box color="secondary" textAlign="center">
 							<SvgFeatureDuck width="10vmax" />
-						</Flex>
+						</Box>
 						<Box fontSize="l" textAlign="center">
 							Rubberducking
 						</Box>
