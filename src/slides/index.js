@@ -21,7 +21,6 @@ import {
 	Code,
 	Frame,
 	Rotate,
-	Appear,
 } from './blinky';
 import Text from '../components/core/Text';
 import Button from '../components/core/Button';
@@ -65,9 +64,6 @@ const Slides = () => (
 					Wayfair
 					<br />
 					Berlin, Germany
-					<Appear>
-						<div aria-label="Two dogs">🐶 🐶</div>
-					</Appear>
 				</div>
 			</Center>
 			<Video
@@ -404,7 +400,7 @@ const theme = {
 			<List>
 				<li>Props are camelCased CSS properties</li>
 				<li>All props are responsive</li>
-				<li>Easy access to design tokens</li>
+				<li>Constrained by design tokens</li>
 				<li>Works with most CSS in JS libraries</li>
 			</List>
 		</>
@@ -493,27 +489,23 @@ export default Flex;
   ]}
   flexWrap="wrap"
 >
-  <Box width={[1, 'auto']} mb="m"
-    <Text as="h1">
-      <Link href="/">Rent-o-dog</Link>
-    </Text>
+  <Box width={[1, 'auto']} mb="m">
+    <Link href="/">Rent-o-dog</Link>
   </Box>
   <nav role="navigation">Navigation</nav>
 </Flex>
 `}</Code>
 			<Demo>
 				<Box p="m" height="100vh" bg="grey.3">
-					<Flex justifyContent={['center', 'space-between']} flexWrap="wrap">
+					<Flex
+						justifyContent={['center', 'space-between']}
+						flexWrap="wrap"
+						fontSize="m"
+					>
 						<Box width={[1, 'auto']} mb="s">
-							<Text as="h1">
-								<Box fontSize="m">
-									<Link href="/">Rent-o-dog</Link>
-								</Box>
-							</Text>
+							<Link href="/">Rent-o-dog</Link>
 						</Box>
-						<Box as="nav" fontSize="m">
-							Navigation
-						</Box>
+						<Box>Navigation</Box>
 					</Flex>
 				</Box>
 			</Demo>
@@ -527,9 +519,8 @@ export default Flex;
 			<Title>Stack</Title>
 			<Code lang="jsx">{`
 import styled from 'styled-components';
+import { grid, system } from 'styled-system';
 import Box from './Box';
-
-const px = value => (typeof value === 'number' ? \`\${value}px\` : value);
 
 const Stack = styled(Box)(
   { display: 'grid' },
@@ -538,10 +529,11 @@ const Stack = styled(Box)(
     minColumnWidth: {
       property: 'gridTemplateColumns',
       transform: (value, scale) =>
-        value ? \`repeat(auto-fit, minmax(\${px(value)}, 1fr))\` : null
+        value ? \`repeat(auto-fit, minmax(\${value}px, 1fr))\` : null
     }
   })
 );
+
 export default Stack;
 `}</Code>
 		</>
@@ -609,11 +601,12 @@ export default Stack;
 
 		<Split>
 			<Code lang="jsx" m="m">{`
-<Box
+<Flex
   bg="bg"
   border="thin"
   borderColor="grey.2"
   borderRadius="base"
+  flexDirection="column"
 >
   <Image src="dog1.jpg" alt="Good girl" />
   <Stack
@@ -629,16 +622,17 @@ export default Stack;
     </Stack>
     <Button fullWidth>Feed Tsiri</Button>
   </Stack>
-</Box>
+</Flex>
 `}</Code>
 			<Demo>
 				<Box p="m" height="100vh" bg="grey.3">
-					<Box
+					<Flex
 						bg="bg"
 						border="thin"
 						borderColor="grey.3"
 						borderRadius="base"
 						height="100%"
+						flexDirection="column"
 					>
 						<Box height="45vh">
 							<Image
@@ -668,7 +662,7 @@ export default Stack;
 							</Stack>
 							<Button fullWidth>Feed Tsiri</Button>
 						</Stack>
-					</Box>
+					</Flex>
 				</Box>
 			</Demo>
 		</Split>
