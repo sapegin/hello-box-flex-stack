@@ -735,7 +735,7 @@ export default Stack;
 				<Link href="https://twitter.com/iamsapegin">@iamsapegin</Link>
 			</p>
 			<p>
-				We’re hiring in Berlin:{' '}
+				Wayfair is hiring in Berlin:{' '}
 				<Link href="http://bit.ly/wfberlin">bit.ly/wfberlin</Link>
 			</p>
 			<Image src={dogsJpg} height="40vh" />
