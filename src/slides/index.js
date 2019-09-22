@@ -345,7 +345,7 @@ const Slides = () => (
 			<>
 				<Title>All props are responsive</Title>
 				<Code lang="jsx" m="m">{`
-//           Mobile Tablet Desktop
+//           small medium large
 <Flex>
   <Box
     width={[ 1,     1/2,  1/4   ]}
