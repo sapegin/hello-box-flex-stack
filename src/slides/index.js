@@ -49,7 +49,8 @@ const Slides = () => (
 	<Deck>
 		<CoverWayfair>
 			<Heading as="h1">
-				Say hello to Box, Flex and Stack: layouts in the component age
+				Say hello to&nbsp;Box, Flex and&nbsp;Stack: layouts
+				in&nbsp;the&nbsp;component age
 			</Heading>
 		</CoverWayfair>
 
@@ -547,7 +548,7 @@ export default Stack;
 
 		<Split>
 			<Code lang="jsx" m="m">{`
-<Stack gridGap="m"
+<Stack gridGap="m">
   <Flex
     justifyContent="center"
     color="secondary"
@@ -606,35 +607,13 @@ export default Stack;
 			</Demo>
 		</Split>
 
-		<Frame src={exampleUrl} />
-
-		<Frame src={exampleUrl} animate />
-
-		<>
-			<Title>Demo</Title>
-			<p>
-				<Link href="https://heybox.sapegin.me/demo.html">
-					heybox.sapegin.me/demo.html
-				</Link>
-			</p>
-			<p>
-				<Link href="https://github.com/sapegin/hello-box-flex-stack">
-					github.com/sapegin/hello-box-flex-stack
-				</Link>
-			</p>
-			<p>
-				Press <code>b</code>, <code>f</code> or <code>s</code> for x-ray.
-			</p>
-		</>
-
 		<Split>
 			<Code lang="jsx" m="m">{`
-<Flex
+<Box
   bg="bg"
   border="thin"
   borderColor="grey.2"
   borderRadius="base"
-  flexDirection="column"
 >
   <Image src="dog1.jpg" alt="Good girl" />
   <Stack
@@ -650,16 +629,15 @@ export default Stack;
     </Stack>
     <Button fullWidth>Feed Tsiri</Button>
   </Stack>
-</Flex>
+</Box>
 `}</Code>
 			<Demo>
 				<Box p="m" height="100vh" bg="grey.3">
-					<Flex
+					<Box
 						bg="bg"
 						border="thin"
 						borderColor="grey.3"
 						borderRadius="base"
-						flexDirection="column"
 						height="100%"
 					>
 						<Box height="45vh">
@@ -690,7 +668,7 @@ export default Stack;
 							</Stack>
 							<Button fullWidth>Feed Tsiri</Button>
 						</Stack>
-					</Flex>
+					</Box>
 				</Box>
 			</Demo>
 		</Split>
@@ -719,6 +697,27 @@ export default Stack;
   ))}
 </Stack>
 `}</Code>
+
+		<Frame src={exampleUrl} />
+
+		<Frame src={exampleUrl} animate />
+
+		<>
+			<Title>Demo</Title>
+			<p>
+				<Link href="https://heybox.sapegin.me/demo.html">
+					heybox.sapegin.me/demo.html
+				</Link>
+			</p>
+			<p>
+				<Link href="https://github.com/sapegin/hello-box-flex-stack">
+					github.com/sapegin/hello-box-flex-stack
+				</Link>
+			</p>
+			<p>
+				Press <code>b</code>, <code>f</code> or <code>s</code> for x-ray.
+			</p>
+		</>
 
 		<>
 			<Title>Recap</Title>
