@@ -6,7 +6,7 @@ This repository contains example for my “Say hello to Box, Flex and Stack: lay
 
 <!-- See slides (TODO) and video (TODO). -->
 
-**[Look at the deployed app](https://cdds.netlify.com/).**
+**[Look at the slides](https://heybox.netlify.com/)** or **[Look at the deployed app](https://heybox.netlify.com/demo.html)**
 
 ## Tech stack
 
