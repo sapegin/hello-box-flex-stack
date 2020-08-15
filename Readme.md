@@ -1,12 +1,17 @@
-# Say hello to Box, Flex and Stack: layouts in the component era
+# Say hello to Box, Flex, Grid and Stack: layouts in the component era
 
 [![Build Status](https://travis-ci.org/sapegin/hello-box-flex-stack.svg)](https://travis-ci.org/sapegin/hello-box-flex-stack)
 
-This repository contains example for my “Say hello to Box, Flex and Stack: layouts in the component era” talk. Based on the [Component-driven development workshop](https://github.com/component-driven/component-driven-development).
+This repository contains example for my “Say hello to Box, Flex, Grid and Stack: layouts in the component era” talk. Based on the [Component-driven development workshop](https://github.com/component-driven/component-driven-development).
 
-<!-- See slides (TODO) and video (TODO). -->
+**[Look at the slides](https://heybox.netlify.com/)**, **[the deployed app](https://heybox.netlify.com/demo.html)** or **[video](https://youtu.be/zvuKuFgp96o)**.
 
-**[Look at the slides](https://heybox.netlify.com/)** or **[Look at the deployed app](https://heybox.netlify.com/demo.html)**
+## Running locally
+
+```
+npm install
+npm start
+```
 
 ## Tech stack
 

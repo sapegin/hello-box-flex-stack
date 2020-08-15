@@ -2,9 +2,10 @@ import React from 'react';
 import { render } from 'react-dom';
 import {
 	Deck,
-	CoverWayfair,
+	Cover,
 	Box,
 	Flex,
+	Grid,
 	Stack,
 	Heading,
 	Title,
@@ -46,12 +47,12 @@ const exampleUrl = isDev ? 'http://localhost:3000/' : '/demo.html';
 
 const Slides = () => (
 	<Deck>
-		<CoverWayfair>
+		<Cover>
 			<Heading as="h1">
-				Say hello to&nbsp;Box, Flex and&nbsp;Stack: layouts
+				Say hello to&nbsp;Box, Flex, Grid and&nbsp;Stack: layouts
 				in&nbsp;the&nbsp;component age
 			</Heading>
-		</CoverWayfair>
+		</Cover>
 
 		<Split>
 			<Center width="100%" height="100%" p="m">
@@ -61,7 +62,7 @@ const Slides = () => (
 					</Title>
 					<Link href="https://twitter.com/iamsapegin">@iamsapegin</Link>
 					<br />
-					Wayfair
+					Omio
 					<br />
 					Berlin, Germany
 				</div>
@@ -273,7 +274,9 @@ const Slides = () => (
 		</Center>
 
 		<Takeaway>
-			<Heading as="p">Components are better way to write CSS</Heading>
+			<Heading as="p">
+				Components are a&nbsp;better way to&nbsp;write CSS
+			</Heading>
 		</Takeaway>
 
 		<Primary>
@@ -406,7 +409,7 @@ const theme = {
 		</>
 
 		<Primary>
-			<Heading>Box / Flex / Stack</Heading>
+			<Heading>Box, Flex, Grid &amp;&nbsp;Stack</Heading>
 		</Primary>
 
 		<Secondary>
@@ -417,7 +420,9 @@ const theme = {
 			<Title>Box</Title>
 			<Code lang="jsx">{`
 import styled from 'styled-components';
-import { space, color, border, layout, flexbox } from 'styled-system';
+import {
+	space, color, border, layout, flexbox, grid, typography
+} from 'styled-system';
 
 const Box = styled('div')(
 	{
@@ -427,7 +432,9 @@ const Box = styled('div')(
 	color,
 	border,
 	layout,
-	flexbox
+	flexbox,
+	grid,
+	typography
 );
 
 export default Box;
@@ -512,25 +519,71 @@ export default Flex;
 		</Split>
 
 		<Secondary>
+			<Heading>Grid</Heading>
+		</Secondary>
+
+		<>
+			<Title>Grid</Title>
+			<Code lang="jsx">{`
+import styled from 'styled-components';
+import Box from './Box';
+
+const Grid = styled(Box)({
+	display: 'grid',
+});
+
+export default Grid;
+`}</Code>
+		</>
+
+		<Split>
+			<Code lang="jsx" m="m">{`
+<Grid
+  gridGap="m"
+  gridTemplateColumns=
+    "repeat(auto-fit, minmax(240px, 1fr))"
+>
+  <Image src="dog1.jpg" alt="" />
+  <Image src="dog2.jpg" alt="" />
+  <Image src="dog3.jpg" alt="" />
+  ...
+</Grid>
+`}</Code>
+			<Demo>
+				<Box p="m" height="100vh" bg="grey.3">
+					<Grid
+						gridGap="m"
+						gridTemplateColumns="repeat(auto-fit, minmax(240px, 1fr))"
+					>
+						<Image src={dog1Jpg} alt="" style={{ maxWidth: '100%' }} />
+						<Image src={dog2Jpg} alt="" style={{ maxWidth: '100%' }} />
+						<Image src={dog3Jpg} alt="" style={{ maxWidth: '100%' }} />
+						<Image src={dog4Jpg} alt="" style={{ maxWidth: '100%' }} />
+						<Image src={dog5Jpg} alt="" style={{ maxWidth: '100%' }} />
+						<Image src={dog6Jpg} alt="" style={{ maxWidth: '100%' }} />
+					</Grid>
+				</Box>
+			</Demo>
+		</Split>
+
+		<Secondary>
 			<Heading>Stack</Heading>
 		</Secondary>
 
 		<>
-			<Title>Stack</Title>
+			<Title>Stack (simplified)</Title>
 			<Code lang="jsx">{`
 import styled from 'styled-components';
-import { grid, system } from 'styled-system';
+import { system } from 'styled-system';
 import Box from './Box';
 
 const Stack = styled(Box)(
-  { display: 'grid' },
-  grid,
   system({
-    minColumnWidth: {
-      property: 'gridTemplateColumns',
-      transform: (value, scale) =>
-        value ? \`repeat(auto-fit, minmax(\${value}px, 1fr))\` : null
-    }
+    gap: {
+      property: '&& > * + *',
+      scale: 'space',
+      transform: (value, scale) => ({ marginTop: scale[value] }),
+    },
   })
 );
 
@@ -539,15 +592,19 @@ export default Stack;
 		</>
 
 		<>
-			<Title>stack-styled</Title>
-			<Link href="https://github.com/sapegin/stack-styled">
-				github.com/sapegin/stack-styled
-			</Link>
+			<Title>Stack (full)</Title>
+			<p>
+				Vertical and horizontal, responsive:
+				<br />
+				<Link href="https://github.com/tamiadev/tamia/blob/master/src/components/Stack.tsx">
+					github.com/tamiadev/tamia/blob/master/src/components/Stack.tsx
+				</Link>
+			</p>
 		</>
 
 		<Split>
 			<Code lang="jsx" m="m">{`
-<Stack gridGap="m" textAlign="center">
+<Stack gap="m" textAlign="center">
   <Box color="secondary">
     <Icon name="duck" />
   </Box>
@@ -561,7 +618,7 @@ export default Stack;
 `}</Code>
 			<Demo>
 				<Box p="m" height="100vh" bg="grey.3">
-					<Stack gridGap="m">
+					<Stack direction="column" gap="m">
 						<Box color="secondary" textAlign="center">
 							<SvgFeatureDuck width="10vmax" />
 						</Box>
@@ -578,31 +635,6 @@ export default Stack;
 
 		<Split>
 			<Code lang="jsx" m="m">{`
-<Stack
-  gridGap="m"
-  minColumnWidth="12vmax"
->
-  <Image src="dog1.jpg" alt="" />
-  <Image src="dog2.jpg" alt="" />
-  <Image src="dog3.jpg" alt="" />
-</Stack>
-`}</Code>
-			<Demo>
-				<Box p="m" height="100vh" bg="grey.3">
-					<Stack gridGap="m" minColumnWidth="12vmax">
-						<Image src={dog1Jpg} alt="" style={{ maxWidth: '100%' }} />
-						<Image src={dog2Jpg} alt="" style={{ maxWidth: '100%' }} />
-						<Image src={dog3Jpg} alt="" style={{ maxWidth: '100%' }} />
-						<Image src={dog4Jpg} alt="" style={{ maxWidth: '100%' }} />
-						<Image src={dog5Jpg} alt="" style={{ maxWidth: '100%' }} />
-						<Image src={dog6Jpg} alt="" style={{ maxWidth: '100%' }} />
-					</Stack>
-				</Box>
-			</Demo>
-		</Split>
-
-		<Split>
-			<Code lang="jsx" m="m">{`
 <Flex
   bg="bg"
   border="thin"
@@ -612,10 +644,10 @@ export default Stack;
 >
   <Image src="dog1.jpg" alt="Good girl" />
   <Stack
-    p="m" flexGrow={1} gridGap="m"
-    alignContent="space-between"
+    p="m" flexGrow={1} gap="m"
+    justifyContent="space-between"
   >
-    <Stack gridGap="xs">
+    <Stack gap="xs">
       <Heading size="m">Tsiri</Heading>
       <Text variant="secondary">
         Saluki from Berlin
@@ -644,17 +676,13 @@ export default Stack;
 								style={{ maxHeight: '100%', objectFit: 'cover' }}
 							/>
 						</Box>
-						<Stack p="l" flexGrow={1} gridGap="m" alignContent="space-between">
-							<Stack gridGap="xs">
+						<Stack p="l" flexGrow={1} gap="m" justifyContent="space-between">
+							<Stack gap="xs">
 								<Box fontSize="m" fontWeight="bold">
 									Tsiri
 								</Box>
 								<Text variant="secondary">Saluki from Berlin</Text>
-								<Stack
-									justifyContent="start"
-									gridAutoFlow="column"
-									gridGap="xxs"
-								>
+								<Stack direction="row" gap="xxs">
 									<Icon size="l" name="star" variant="rating" alt="" />
 									<Icon size="l" name="star" variant="rating" alt="" />
 									<Icon size="l" name="star" variant="rating" alt="" />
@@ -721,7 +749,8 @@ export default Stack;
 				<li>Components are the new way of writing CSS</li>
 				<li>Reuse your CSS knowledge</li>
 				<li>
-					Box / Flex / Stack components are enough to create almost any layout
+					Box, Flex, Grid &amp; Stack components are enough to create almost any
+					layout
 				</li>
 			</List>
 		</>
@@ -733,10 +762,6 @@ export default Stack;
 				<br /> Me: <Link href="https://sapegin.me/">sapegin.me</Link>
 				<br /> Twitter:{' '}
 				<Link href="https://twitter.com/iamsapegin">@iamsapegin</Link>
-			</p>
-			<p>
-				Wayfair is hiring in Berlin:{' '}
-				<Link href="http://bit.ly/wfberlin">bit.ly/wfberlin</Link>
 			</p>
 			<Image src={dogsJpg} height="40vh" />
 		</>

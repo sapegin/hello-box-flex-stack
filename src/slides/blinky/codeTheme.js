@@ -24,6 +24,7 @@ export default {
 	MozHyphens: 'none',
 	msHyphens: 'none',
 	hyphens: 'none',
+	fontVariantLigatures: 'none',
 
 	'& .comment': {
 		color: lightColor,

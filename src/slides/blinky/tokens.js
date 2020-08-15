@@ -11,7 +11,7 @@ export const addColor = '#2d7b43';
 export const removeColor = '#bb2c2c';
 
 export const font = '"PT Sans", sans-serif';
-export const monospace = '"Fira Mono", monospace';
+export const monospace = 'MonoLisa, monospace';
 
 export const fontSizes = {
 	base: '5vmin',

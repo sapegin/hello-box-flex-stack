@@ -1,9 +1,9 @@
 import React from 'react';
 import Flex from '../components/Flex';
 import Box from '../components/Box';
-import Wayfair from './Wayfair';
+import Omio from './Omio';
 
-const CoverWayfair = props => (
+const Cover = props => (
 	<Flex
 		bg="primary"
 		color="background"
@@ -16,11 +16,11 @@ const CoverWayfair = props => (
 		<Flex justifyContent="center" alignItems="center" flexGrow={1}>
 			{props.children}
 		</Flex>
-		<Flex>
+		<Flex alignItems="center">
 			<Box mr="auto">Artem Sapegin</Box>
-			<Wayfair variation="white" width="15vw" />
+			<Omio variation="white" width="10vw" />
 		</Flex>
 	</Flex>
 );
 
-export default CoverWayfair;
+export default Cover;
