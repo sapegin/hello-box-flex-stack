@@ -31,6 +31,7 @@ import Demo from './demo';
 import meMov from './assets/me.mov';
 import cssMp4 from './assets/css.mp4';
 import styleguidistSvg from './assets/react-styleguidist.svg';
+import componentDrivenSvg from './assets/component-driven.svg';
 import ouroborosSvg from './assets/ouroboros.svg';
 import dogsJpg from './assets/dogs.jpg';
 
@@ -755,6 +756,12 @@ export default Stack;
 			</List>
 		</>
 
+		<Center>
+			<Link href="https://component-driven.io/">
+				<Image src={componentDrivenSvg} alt="Component-driven" />
+			</Link>
+		</Center>
+
 		<>
 			<Title>Thank you and use components!</Title>
 			<p>
@@ -762,6 +769,8 @@ export default Stack;
 				<br /> Me: <Link href="https://sapegin.me/">sapegin.me</Link>
 				<br /> Twitter:{' '}
 				<Link href="https://twitter.com/iamsapegin">@iamsapegin</Link>
+				<br />
+				Conding font: <Link href="https://monolisa.dev/">MonoLisa</Link>
 			</p>
 			<Image src={dogsJpg} height="40vh" />
 		</>
